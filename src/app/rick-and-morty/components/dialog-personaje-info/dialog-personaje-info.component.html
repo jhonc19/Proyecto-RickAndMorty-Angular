@@ -4,7 +4,7 @@
   <div class="properties-content w-40">
     <p class="name-personaje">{{character.name}}</p>
     <div class="status-container">
-      <mat-icon class="point-icon color-green">circle</mat-icon>
+      <mat-icon [class]="getColorDinamic()">circle</mat-icon>
       {{character.status}}
     </div>
     <mat-list role="list">
