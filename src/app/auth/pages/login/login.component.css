@@ -1,0 +1,47 @@
+.content-center {
+  background-color: #7b1fa2;
+}
+
+.container {
+  display: flex;
+  background-color: #303030;
+  color: #fff;
+  /* height: 55%; */
+  height: 520px;
+  width: 1150px;
+  box-shadow: 0 0 40px 10px #af43f6
+}
+
+.container-img {
+  background-image: url("https://images6.alphacoders.com/909/thumb-1920-909641.png");
+  background-size: cover;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.header-login {
+  text-align: center;
+  padding: 5px 0 15px 0;
+}
+
+.w-65 {
+  width: 65%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

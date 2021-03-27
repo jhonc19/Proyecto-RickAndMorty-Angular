@@ -1,0 +1,39 @@
+<mat-dialog-content class="container">
+  <div class="container-img w-60" [style]="getImg()">
+  </div>
+  <div class="properties-content w-40">
+    <p class="name-personaje">{{character.name}}</p>
+    <div class="status-container">
+      <mat-icon class="point-icon color-green">circle</mat-icon>
+      {{character.status}}
+    </div>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngIf="character.species">
+        <mat-icon class="space-icon">accessibility</mat-icon>
+        Especie: {{character.species}}
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="character.type">
+        <mat-icon class="space-icon">science</mat-icon>
+        Tipo: {{character.type}}
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="character.gender">
+        <mat-icon class="space-icon">{{getGenero()}}</mat-icon>
+        Género: {{character.gender}}
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="character.origin.name">
+        <mat-icon class="space-icon">house</mat-icon>
+        Ubicación origen: {{character.location.name}}
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="character.location.name.trim() !== character.origin.name.trim()">
+        <mat-icon class="space-icon">travel_explore</mat-icon>
+        Ultima ubicación: {{character.location.name}}
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="nameEpisode">
+        <mat-icon class="space-icon">location_on</mat-icon>
+        Primera aparición: {{nameEpisode}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+
+</mat-dialog-content>

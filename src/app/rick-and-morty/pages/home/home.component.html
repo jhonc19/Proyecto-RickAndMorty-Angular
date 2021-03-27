@@ -1,0 +1,58 @@
+<mat-sidenav-container fullscreen>
+
+  <div class="content-center" *ngIf="!userLogin; else divHome">
+    <mat-spinner></mat-spinner>
+  </div>
+  <ng-template #divHome>
+    <mat-sidenav-container fullscreen>
+      <mat-sidenav #sidenav mode="push">
+        <mat-toolbar color="primary">
+          <span>Menú</span>
+          <span class="spacer"></span>
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </mat-toolbar>
+        <mat-nav-list>
+          <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>label</mat-icon>
+            <span>Listado de Personajes</span>
+          </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a routerLink="./favoritos" mat-list-item (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>favorite</mat-icon>
+            <span>Personajes Favoritos</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+        <span>{{userLogin.nombres | mayuscula}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onLogout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+          <button mat-menu-item routerLink="./favoritos">
+            <mat-icon [matBadge]="numberFavorites" >favorite</mat-icon>
+            <span>Favoritos</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-container>
+  </ng-template>
+</mat-sidenav-container>
+<!-- </ng-template>
+ -->

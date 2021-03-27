@@ -1,0 +1,58 @@
+.dialog-content {
+  width: 800px;
+  height: 430px;
+}
+
+.container {
+  display: flex;
+  color: #fff;
+  /* height: 55%; */
+  width: 850px;
+  height: 430px;
+}
+
+.container-img {
+  background-size: cover;
+  height: 100%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.point-icon {
+  font-size: 13px;
+  height: 13px;
+  width: 13px;
+}
+
+.space-icon {
+  padding: 0 8px 0 0;
+}
+
+.color-green {
+  color: rgb(85, 204, 68);
+}
+
+.color-red {
+  color: rgb(214, 61, 46);
+}
+
+.properties-content {
+  padding: 30px;
+}
+
+.name-personaje {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.status-container {
+  font-size: large;
+  font-weight: 500;
+  padding-bottom: 20px;
+}

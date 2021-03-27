@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rick-and-morty-login": {
+      "hosting": {
+        "rickAndMortyApp": [
+          "rick-and-morty-login"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<mat-divider></mat-divider>
+<div fxLayout="row">
+  <div fxLayout="column" fxFlex="100">
+    <mat-toolbar fxLayout="column" fxLayoutAlign="center" fxFlex="5vh" color="primary">
+      <span>Personajes Favoritos</span>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="50" class="py-4">
+      <div fxFlex.xl ="20" fxFlex.lg="25" class="p-2" *ngFor="let character of charactersFav">
+        <app-personaje-card [character]="character.character" [favorite]="character.favorite"
+          (onChange)="changeFavorite($event)"></app-personaje-card>
+      </div>
+    </div>
+  </div>
+</div>

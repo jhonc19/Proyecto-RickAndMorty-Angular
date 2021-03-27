@@ -1,0 +1,26 @@
+<mat-divider></mat-divider>
+<div fxLayout="row">
+  <div fxLayout="column" fxFlex="100">
+    <!-- <div  style="background-color: red;  " class="py-5"> -->
+    <mat-toolbar fxLayout="column" fxLayoutAlign="center" fxFlex="5vh" color="primary">
+      <span>Personajes</span>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <app-buscar-input (onDebounce)="tryOnDebounce($event)"></app-buscar-input>
+    <mat-divider></mat-divider>
+    <!-- </div> -->
+    <div class="content-center" *ngIf="!charactersFav; else divHome">
+      <mat-spinner></mat-spinner>
+    </div>
+    <ng-template #divHome>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="50" class="py-4">
+        <div fxFlex.xl ="20" fxFlex.lg="25" class="p-2" *ngFor="let characterFav of charactersFav;">
+          <app-personaje-card [character]="characterFav.character" [favorite]="characterFav.favorite">
+          </app-personaje-card>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<mat-paginator [length]="671" [pageSize]="20" [pageSizeOptions]="[20]" (page)="handlePage($event)">
+</mat-paginator>

@@ -1,0 +1,74 @@
+<div class="content-center">
+  <div class="container">
+    <div class="container-img w-65">
+    </div>
+    <mat-tab-group animationDuration="200ms" class="w-35">
+      <mat-tab label="Ingresar">
+        <form class="container-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="header-login">
+            <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"
+              style="width: 85px; height: 75px;"></mat-icon>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="pepe@example.com" formControlName="email" required>
+            <mat-error>
+              Email no valido
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+              Este campo es requerido
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Ingresar</button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Nueva Cuenta">
+        <form class="container-login" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div class="header-login">
+            <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"
+              style="width: 85px; height: 75px;"></mat-icon>
+          </div>
+          <mat-form-field appearance="fill">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-label>Nombres</mat-label>
+            <input matInput formControlName="fullName" required>
+            <mat-error>
+              Este campo es requerido
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="pepe@example.com" formControlName="email" required>
+            <mat-error>
+              Email no valido
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+              Este campo debe contener al menos 6 carácteres
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Registrarse</button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+  <!-- <mat-spinner></mat-spinner> -->
+</div>
